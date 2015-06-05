@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">KitchenMaterial</string>
+
+    <string name="activity_title_example">Example Activity</string>
+
+    <string name="dialog_action_ok">OK</string>
+    <string name="dialog_action_cancel">CANCEL</string>
+
 </resources>
