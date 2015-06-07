@@ -51,4 +51,7 @@ dependencies {
 
     // Ion - Android Asynchronous Networking and Image Loading
     compile 'com.koushikdutta.ion:ion:2.+'
+
+    // A library to bring fully animated Material Design components to pre-Lolipop Android
+    compile 'com.github.rey5137:material:1.1.1'
 }

@@ -12,7 +12,6 @@ import java.util.List;
 import butterknife.InjectView;
 import butterknife.OnClick;
 import ph.coreproc.android.kitchenmaterial.R;
-import ph.coreproc.android.kitchenmaterial.dialogs.ExampleDialogFragment;
 import ph.coreproc.android.kitchenmaterial.dialogs.MessageDialogFragment;
 import ph.coreproc.android.kitchenmaterial.models.Contributor;
 import ph.coreproc.android.kitchenmaterial.rest.RestClient;
@@ -48,8 +47,6 @@ public class ExampleActivity extends BaseActivity {
     protected int getLayoutResourceId() {
         return R.layout.activity_example;
     }
-
-
 
     @OnClick(R.id.btnGetContributors)
     public void getContributors() {
