@@ -13,6 +13,7 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 import ph.coreproc.android.kitchenmaterial.R;
 import ph.coreproc.android.kitchenmaterial.dialogs.ExampleDialogFragment;
+import ph.coreproc.android.kitchenmaterial.dialogs.MessageDialogFragment;
 import ph.coreproc.android.kitchenmaterial.models.Contributor;
 import ph.coreproc.android.kitchenmaterial.rest.RestClient;
 import retrofit.Callback;
@@ -67,8 +68,8 @@ public class ExampleActivity extends BaseActivity {
 
                 tvResults.setText("");
 
-                ExampleDialogFragment exampleDialogFragment = ExampleDialogFragment.newInstance();
-                exampleDialogFragment.show(getSupportFragmentManager(), "ExampleDialogFragment");
+                MessageDialogFragment messageDialogFragment = MessageDialogFragment.newInstance("Title", "message", R.drawable.ic_launcher);
+                messageDialogFragment.show(getSupportFragmentManager(), "MessageDialogFragment");
 
                 for(Contributor contributor : contributors) {
                     tvResults.setText(tvResults.getText() +
