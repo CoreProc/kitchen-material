@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/spacing_small"
+    android:paddingRight="@dimen/spacing_small"
+    android:paddingTop="@dimen/spacing_small">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/spacing_small">
+
+            <ImageView
+                android:id="@+id/ivAvatar"
+                android:layout_width="100px"
+                android:layout_height="100px"
+                android:layout_alignParentLeft="true"
+                android:background="#fff"
+                android:scaleType="centerInside" />
+
+            <TextView
+                android:id="@+id/tvUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_small"
+                android:layout_toRightOf="@id/ivAvatar"
+                android:text="username"
+                android:textColor="@color/text_primary" />
+
+            <TextView
+                android:id="@+id/tvContributionLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvUsername"
+                android:layout_marginLeft="@dimen/spacing_small"
+                android:layout_toRightOf="@id/ivAvatar"
+                android:text="Contributions: " />
+
+            <TextView
+                android:id="@+id/tvContributions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvUsername"
+                android:layout_marginLeft="@dimen/spacing_small"
+                android:layout_toRightOf="@id/tvContributionLbl"
+                android:text="(n)"
+                android:textColor="@color/text_secondary" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

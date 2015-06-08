@@ -30,6 +30,11 @@ public class Contributor extends Model {
     @Column(name = "contributions")
     public int contributions;
 
+    @Expose
+    @SerializedName("avatar_url")
+    @Column(name = "avatar_url")
+    public String avatarUrl;
+
     public Contributor() {
         super();    // required by ActiveAndroid
     }

@@ -51,4 +51,7 @@ dependencies {
 
     // Ion - Android Asynchronous Networking and Image Loading
     compile 'com.koushikdutta.ion:ion:2.+'
+
+    // Picasso - image downloading and caching library for Android
+    compile 'com.squareup.picasso:picasso:2.5.2'
 }
