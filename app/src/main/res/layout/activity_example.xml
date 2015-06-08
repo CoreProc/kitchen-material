@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -13,30 +12,18 @@
         android:layout_margin="@dimen/spacing_medium"
         android:orientation="vertical">
 
-        <com.rey.material.widget.Button
+        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="BUTTON"
-            app:rd_enable="true" />
-
-        <com.rey.material.widget.CheckBox
-            style="@style/Material.Drawable.CheckBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_small"
-            android:gravity="center_vertical"
             android:text="Check box" />
 
-        <com.rey.material.widget.RadioButton
-            style="@style/Material.Drawable.RadioButton"
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_small"
-            android:gravity="center_vertical"
             android:text="Radio Button" />
 
-        <com.rey.material.widget.Switch
-            style="@style/Material.Widget.Switch"
+        <Switch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_small"
