@@ -34,16 +34,4 @@ public class Contributor extends Model {
         super();    // required by ActiveAndroid
     }
 
-    public String toJson() {
-        Gson gson = new GsonBuilder().create();
-        String json = gson.toJson(this);
-        return json;
-    }
-
-    public Contributor fromJson(String json) {
-        Gson gson = new GsonBuilder().create();
-        Contributor contributor = gson.fromJson(json, Contributor.class);
-        return contributor;
-    }
-
 }
