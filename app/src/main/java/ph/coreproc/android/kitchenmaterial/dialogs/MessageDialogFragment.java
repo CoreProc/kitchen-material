@@ -14,6 +14,8 @@ import ph.coreproc.android.kitchenmaterial.R;
  */
 public class MessageDialogFragment extends DialogFragment {
 
+    public static final String TAG = "MessageDialogFragment";
+
     private static final String ARGS_TITLE = "ARGS_TITLE";
     private static final String ARGS_MESSAGE = "ARGS_MESSAGE";
     private static final String ARGS_ICON = "ARGS_ICON";
