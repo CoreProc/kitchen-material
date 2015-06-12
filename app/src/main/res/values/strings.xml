@@ -6,4 +6,6 @@
     <string name="dialog_action_ok">OK</string>
     <string name="dialog_action_cancel">CANCEL</string>
 
+    <string name="progress_dialog_message_please_wait">Please Wait...</string>
+
 </resources>

@@ -15,14 +15,14 @@ public class ModelUtil {
 
     /**
      * Gson object that will be used for converting
-     * POJOs into JSON string and vice-versa
+     * POJOs into JSON string and vice-versa.
      */
     private static Gson gson;
 
     /**
-     * initialize the gson object using a GsonBuilder
+     * Initialize the gson object using a GsonBuilder
      * excluding fields of POJOs without @Expose annotation
-     * and with a date format that will be used in conversion
+     * and with a date format that will be used in conversion.
      */
     static {
         gson = new GsonBuilder()
@@ -32,7 +32,7 @@ public class ModelUtil {
     }
 
     /**
-     * Convert java object to JSON string using Gson
+     * Convert java object to JSON string using Gson.
      *
      * @param object a java object
      * @return the JSON string of the specified object
