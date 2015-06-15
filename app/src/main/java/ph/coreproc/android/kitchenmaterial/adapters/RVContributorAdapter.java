@@ -55,6 +55,11 @@ public class RVContributorAdapter extends RecyclerView.Adapter<RVContributorAdap
         super.onAttachedToRecyclerView(recyclerView);
     }
 
+    public void changeData(List<Contributor> contributors) {
+        mContributors = contributors;
+        notifyDataSetChanged();
+    }
+
     public static class ContributorViewHolder extends RecyclerView.ViewHolder {
 
         @InjectView(R.id.ivAvatar)
