@@ -2,6 +2,7 @@ package ph.coreproc.android.kitchenmaterial.activities;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Button;
@@ -14,6 +15,7 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 import ph.coreproc.android.kitchenmaterial.R;
 import ph.coreproc.android.kitchenmaterial.adapters.RVContributorAdapter;
+import ph.coreproc.android.kitchenmaterial.fragments.ExampleFragment;
 import ph.coreproc.android.kitchenmaterial.models.Contributor;
 import ph.coreproc.android.kitchenmaterial.rest.RestClient;
 import retrofit.Callback;
@@ -37,7 +39,6 @@ public class ExampleActivity extends BaseActivity {
     @InjectView(R.id.rvContributors)
     RecyclerView rvContributors;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +52,12 @@ public class ExampleActivity extends BaseActivity {
     }
 
     private void initialize() {
+        ExampleFragment exampleFragment = ExampleFragment.newInstance();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.fragment, exampleFragment)
+                .commit();
+
         rvContributors.setHasFixedSize(true);
 
         LinearLayoutManager llm = new LinearLayoutManager(mContext);
