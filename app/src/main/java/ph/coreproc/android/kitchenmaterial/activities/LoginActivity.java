@@ -29,7 +29,7 @@ public class LoginActivity extends BaseActivity {
     }
 
     @OnClick(R.id.btnLogin)
-    private void login() {
+    public void login() {
         String username = etUsername.getText().toString();
         String password = etPassword.getText().toString();
 

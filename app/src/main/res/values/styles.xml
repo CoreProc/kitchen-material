@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <style name="Button.Primary" parent="android:Widget.Button">
+        <item name="android:background">@drawable/button_primary</item>
+        <item name="android:textColor">@color/button_primary_text</item>
+    </style>
+
+    <style name="Button.Danger" parent="android:Widget.Button">
+        <item name="android:background">@drawable/button_danger</item>
+        <item name="android:textColor">@color/button_danger_text</item>
+    </style>
+    
+</resources>

@@ -42,7 +42,7 @@
 
         <activity
             android:name=".activities.LoginActivity"
-            android:label="@string/activity_title_example"
+            android:label="@string/activity_title_login"
             android:screenOrientation="portrait"/>
 
     </application>
