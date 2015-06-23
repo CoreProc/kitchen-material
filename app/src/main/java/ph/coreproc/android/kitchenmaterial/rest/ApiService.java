@@ -15,6 +15,9 @@ public interface ApiService {
 //    @GET("")
 //    void getContributors(@Header("X-Authorization") String authorization, Callback<Contributor> callback);
 
+//    @GET("")
+//    void getContributors(Callback<com.google.gson.JsonObject> callback);
+
 //    @POST("/users/new")
 //    void createUser(@Body User user, Callback<User> cb);
 

@@ -2,6 +2,7 @@ package ph.coreproc.android.kitchenmaterial.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 
 import java.lang.reflect.Type;
 
@@ -37,8 +38,18 @@ public class ModelUtil {
      * @param object a java object
      * @return the JSON string of the specified object
      */
-    public static String toJson(Object object) {
+    public static String toJsonString(Object object) {
         return gson.toJson(object);
+    }
+
+    /**
+     * Convert java object to JsonObject.
+     *
+     * @param object a java object
+     * @return the JsonObject of the specified object
+     */
+    public static JsonObject toJsonObject(Object object) {
+        return gson.toJsonTree(object).getAsJsonObject();
     }
 
     /**
