@@ -1,16 +1,33 @@
 apply plugin: 'com.android.application'
 
+// Version Info
+def versionMajor = 1    // backward compatibility
+def versionMinor = 0    // new feature or a major behavior change
+def versionPatch = 0    // fixes
+
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
 
     defaultConfig {
         applicationId "ph.coreproc.android.kitchenmaterial"
+
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+
+        versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
     }
+
+    signingConfigs {
+        appname {
+            keyAlias 'appname'
+            keyPassword 'coreproc'
+            storeFile file('appname.keystore')
+            storePassword 'coreproc'
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -27,31 +44,22 @@ repositories {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-
     compile 'com.android.support:design:22.2.0'
     compile 'com.android.support:appcompat-v7:22.2.0'
-
     compile 'com.android.support:cardview-v7:22.2.0'
     compile 'com.android.support:recyclerview-v7:22.2.0'
-
     // Butter Knife - view injection
     compile 'com.jakewharton:butterknife:6.1.0'
-
     // Retrofit - REST API to Java interface
     compile 'com.squareup.retrofit:retrofit:1.9.0'
-
     // ActiveAndroid - active record style ORM
     compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
-
     // Gson - convert Java Objects into their JSON representation
     compile 'com.google.code.gson:gson:2.3.1'
-
     // EventBus - simplifies communication between components
     compile 'de.greenrobot:eventbus:2.4.0'
-
     // Ion - Android Asynchronous Networking and Image Loading
     compile 'com.koushikdutta.ion:ion:2.+'
-
     // Picasso - image downloading and caching library for Android
     compile 'com.squareup.picasso:picasso:2.5.2'
 }
