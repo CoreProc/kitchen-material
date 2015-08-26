@@ -22,7 +22,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(getLayoutResourceId());
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         mContext = this;
 

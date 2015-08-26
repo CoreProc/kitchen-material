@@ -29,7 +29,7 @@ the accent color you set in `colors.xml` as tint to your views.
             super.onCreate(savedInstanceState);
     
             setContentView(getLayoutResourceId());
-            ButterKnife.inject(this);
+            ButterKnife.bind(this);
     
             mContext = this;
     

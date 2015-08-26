@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
 import ph.coreproc.android.kitchenmaterial.R;
 import ph.coreproc.android.kitchenmaterial.adapters.RVContributorAdapter;
@@ -27,16 +27,16 @@ import retrofit.client.Response;
  */
 public class ExampleActivity extends BaseActivity {
 
-    @InjectView(R.id.etUser)
+    @Bind(R.id.etUser)
     EditText etUser;
 
-    @InjectView(R.id.etRepository)
+    @Bind(R.id.etRepository)
     EditText etRepository;
 
-    @InjectView(R.id.btnGetContributors)
+    @Bind(R.id.btnGetContributors)
     Button btnGetContributors;
 
-    @InjectView(R.id.rvContributors)
+    @Bind(R.id.rvContributors)
     RecyclerView rvContributors;
 
     @Override

@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import ph.coreproc.android.kitchenmaterial.R;
 
 /**
@@ -19,7 +19,7 @@ public class ExampleFragment extends Fragment {
 
     private Context mContext;
 
-    @InjectView(R.id.tv)
+    @Bind(R.id.tv)
     TextView tv;
 
     public static ExampleFragment newInstance() {
@@ -38,7 +38,7 @@ public class ExampleFragment extends Fragment {
 
 //        Bundle bundle = getArguments();
 
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         initialize();
 
         mContext = getActivity();

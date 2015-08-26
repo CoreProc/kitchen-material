@@ -3,7 +3,7 @@ package ph.coreproc.android.kitchenmaterial.activities;
 import android.os.Bundle;
 import android.widget.EditText;
 
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
 import ph.coreproc.android.kitchenmaterial.R;
 
@@ -12,10 +12,10 @@ import ph.coreproc.android.kitchenmaterial.R;
  */
 public class LoginActivity extends BaseActivity {
 
-    @InjectView(R.id.etUsername)
+    @Bind(R.id.etUsername)
     EditText etUsername;
 
-    @InjectView(R.id.etPassword)
+    @Bind(R.id.etPassword)
     EditText etPassword;
 
     @Override

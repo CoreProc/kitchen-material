@@ -13,7 +13,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import ph.coreproc.android.kitchenmaterial.R;
 import ph.coreproc.android.kitchenmaterial.models.Contributor;
 
@@ -62,18 +62,18 @@ public class RVContributorAdapter extends RecyclerView.Adapter<RVContributorAdap
 
     public static class ContributorViewHolder extends RecyclerView.ViewHolder {
 
-        @InjectView(R.id.ivAvatar)
+        @Bind(R.id.ivAvatar)
         ImageView ivAvatar;
 
-        @InjectView(R.id.tvUsername)
+        @Bind(R.id.tvUsername)
         TextView tvUsername;
 
-        @InjectView(R.id.tvContributions)
+        @Bind(R.id.tvContributions)
         TextView tvContributions;
 
         ContributorViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this, itemView);
         }
     }
 
