@@ -4,7 +4,8 @@
     <dimen name="spacing_small">8dp</dimen>
     <dimen name="spacing_medium">16dp</dimen>
     <dimen name="spacing_large">24dp</dimen>
-    
+    <dimen name="spacing_xlarge">40dp</dimen>
+
     <dimen name="button_inset_vertical_material">6dp</dimen>
     <dimen name="button_inset_horizontal_material">4dp</dimen>
     <dimen name="control_corner_material">2dp</dimen>

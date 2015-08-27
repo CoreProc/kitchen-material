@@ -45,6 +45,8 @@
             android:label="@string/activity_title_login"
             android:screenOrientation="portrait"/>
 
+        <activity android:name=".activities.DrawerActivity"/>
+
     </application>
 
 </manifest>
