@@ -1,5 +1,7 @@
 package ph.coreproc.android.kitchenmaterial.activities;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 
@@ -11,6 +13,11 @@ import ph.coreproc.android.kitchenmaterial.R;
  * Created by johneris on 6/16/2015.
  */
 public class LoginActivity extends BaseActivity {
+
+    public static Intent newIntent(Context context) {
+        Intent intent = new Intent(context, LoginActivity.class);
+        return intent;
+    }
 
     @Bind(R.id.etUsername)
     EditText etUsername;

@@ -1,5 +1,7 @@
 package ph.coreproc.android.kitchenmaterial.activities;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,6 +17,11 @@ import ph.coreproc.android.kitchenmaterial.R;
  * Created by johneris on 8/26/15.
  */
 public class DrawerActivity extends BaseActivity {
+
+    public static Intent newIntent(Context context) {
+        Intent intent = new Intent(context, DrawerActivity.class);
+        return intent;
+    }
 
     @Bind(R.id.navigationView)
     NavigationView mNavigationView;

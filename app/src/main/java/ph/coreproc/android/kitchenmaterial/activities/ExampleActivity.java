@@ -1,6 +1,8 @@
 package ph.coreproc.android.kitchenmaterial.activities;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,6 +28,11 @@ import retrofit.client.Response;
  * Created by johneris on 6/1/2015.
  */
 public class ExampleActivity extends BaseActivity {
+
+    public static Intent newIntent(Context context) {
+        Intent intent = new Intent(context, ExampleActivity.class);
+        return intent;
+    }
 
     @Bind(R.id.etUser)
     EditText etUser;
