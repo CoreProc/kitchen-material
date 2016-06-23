@@ -3,19 +3,21 @@ apply plugin: 'com.android.application'
 // Version Info
 def versionMajor = 1    // backward compatibility
 def versionMinor = 0    // new feature or a major behavior change
-def versionPatch = 0    // fixes
+def versionPatch = 0    // fixes or minor patch
+
+def buildNumber = 0     // change this for same versionName but different versionCode
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    compileSdkVersion 24
+    buildToolsVersion "24"
 
     defaultConfig {
         applicationId "ph.coreproc.android.kitchenmaterial"
 
-        minSdkVersion 15
-        targetSdkVersion 22
+        minSdkVersion 15        // minimum supported version
+        targetSdkVersion 22     // maximum sdk version the app is tested against
 
-        versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100
+        versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + buildNumber
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
     }
 
@@ -44,14 +46,14 @@ repositories {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:design:22.2.0'
-    compile 'com.android.support:appcompat-v7:22.2.0'
-    compile 'com.android.support:cardview-v7:22.2.0'
-    compile 'com.android.support:recyclerview-v7:22.2.0'
+    compile 'com.android.support:design:24.0.0'
+    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile 'com.android.support:cardview-v7:24.0.0'
+    compile 'com.android.support:recyclerview-v7:24.0.0'
     // Butter Knife - view injection
     compile 'com.jakewharton:butterknife:7.0.1'
     // Retrofit - REST API to Java interface
-    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
     // ActiveAndroid - active record style ORM
     compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
     // Gson - convert Java Objects into their JSON representation
