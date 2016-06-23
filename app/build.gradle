@@ -53,7 +53,7 @@ dependencies {
     // Butter Knife - view injection
     compile 'com.jakewharton:butterknife:7.0.1'
     // Retrofit - REST API to Java interface
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
     // ActiveAndroid - active record style ORM
     compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
     // Gson - convert Java Objects into their JSON representation
