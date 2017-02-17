@@ -13,7 +13,7 @@ Icon
 ._*
 
 # Files that might appear in the root of a volume
-.DocumentRevisions-V100
+.DocumentRevisions-V100 
 .fseventsd
 .Spotlight-V100
 .TemporaryItems
@@ -35,6 +35,7 @@ Temporary Items
 
 ## Directory-based project format:
 .idea/
+kitchen-android-module/
 # if you remove the above rule, at least ignore the following:
 
 # User-specific stuff:
@@ -106,9 +107,11 @@ hs_err_pid*
 # Generated files
 bin/
 gen/
+app/mirror/
 
 # Gradle files
 .gradle/
+gradle
 !gradle-wrapper.jar
 build/
 /*/build/
@@ -125,3 +128,5 @@ proguard/
 ### Android Patch ###
 gen-external-apklibs
 
+kitchen-android-module/
+searchview/src/test/
