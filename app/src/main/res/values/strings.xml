@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">KitchenMaterial</string>
+    <string name="app_name">Bundy Android</string>
 
     <string name="activity_title_example">Example Activity</string>
     <string name="activity_title_login">Login Activity</string>

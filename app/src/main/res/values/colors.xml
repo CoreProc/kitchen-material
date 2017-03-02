@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="primary">#2196F3</color>           <!-- color of toolbar -->
-    <color name="primary_dark">#1976D2</color>      <!-- color of status bar -->
+    <color name="primary">#212121</color>           <!-- color of toolbar -->
+    <color name="primary_dark">#616161</color>      <!-- color of status bar -->
     <color name="primary_light">#BBDEFB</color>
     <color name="accent">#009688</color>            <!-- tint of views -->
     <color name="text_primary">#212121</color>
     <color name="text_secondary">#727272</color>
+    <color name="gray_alpha">#99727272</color>
     <color name="divider">#B6B6B6</color>
     <color name="text_icon">#FFFFFF</color>
 
@@ -19,5 +20,21 @@
     <color name="button_danger_background_pressed">#F44336</color>
     <color name="button_danger_background_focused">#F44336</color>
     <color name="button_danger_text">#000000</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#1a1a1a</color>
+    <color name="silver">#c0c0c0</color>
+    <color name="blue">#64b1b2</color>
+    <color name="green">#a9d397</color>
+    <color name="red">#df5858</color>
+    <color name="yellow">#fffa76</color>
+    <color name="dark_yellow">#dfdf32</color>
+    <color name="brown">#b18b67</color>
+    <color name="orange">#fdba54</color>
+    <color name="pink">#ffc0cb</color>
+    <color name="gold">#cf9f0f</color>
+    <color name="purple">#800080</color>
+    <color name="cream">#F9F1DC</color>
+
 
 </resources>

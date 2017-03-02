@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_qr_code_reader"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ph.coreproc.android.kitchenmaterial.activities.QrCodeReaderActivity">
+
+
+    <com.dlazaro66.qrcodereaderview.QRCodeReaderView
+        android:id="@+id/qrdecoderview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@color/gray_alpha"
+        android:gravity="center"
+        android:padding="10sp"
+        android:text="Scan QR with your ID"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@color/white" />
+
+
+    <ImageView
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10sp"
+        android:id="@+id/cameraPreview"
+        android:visibility="gone"
+        android:src="@drawable/ic_camera_rear_white_48dp" />
+
+
+</RelativeLayout>
