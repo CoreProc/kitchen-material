@@ -14,9 +14,8 @@ import ph.coreproc.android.kitchenmaterial.R;
 public abstract class BaseActivity extends AppCompatActivity {
 
     protected Context mContext;
-    protected Toolbar mToolbar;
 
-    protected abstract int getLayoutResourceId();
+    protected Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +33,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onDestroy() {
-        mContext = null;
-        super.onDestroy();
-    }
+    protected abstract int getLayoutResourceId();
+
 }
