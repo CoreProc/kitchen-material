@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_capture_image"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ph.coreproc.android.kitchenmaterial.activities.CaptureImageActivity">
+
+
+
+    <RelativeLayout
+        android:id="@+id/rlCamera"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <SurfaceView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/svCamera"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/tvCounter"
+            android:text="asdasdasdas"
+            android:textSize="100sp"
+            android:textColor="@color/white"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

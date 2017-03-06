@@ -1,30 +1,52 @@
 package ph.coreproc.android.kitchenmaterial.activities;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.PointF;
+import android.hardware.Camera;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.coreproc.android.kitchen.models.APIError;
+import com.coreproc.android.kitchen.utils.ErrorUtil;
+import com.coreproc.android.kitchen.utils.KitchenRestClient;
 import com.dlazaro66.qrcodereaderview.QRCodeReaderView;
+import com.google.gson.JsonObject;
 import com.kosalgeek.android.photoutil.CameraPhoto;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import ph.coreproc.android.kitchenmaterial.BundyAndroidBase;
 import ph.coreproc.android.kitchenmaterial.R;
+import ph.coreproc.android.kitchenmaterial.rest.TimeInInterface;
 import ph.coreproc.android.kitchenmaterial.utils.UiUtil;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class QrCodeReaderActivity extends AppCompatActivity {
+
+    // QR CODE SCANNING
+
+    @Bind(R.id.rlQrCodeScan)
+    RelativeLayout rlQrCodeScan;
 
     @Bind(R.id.cameraPreview)
     ImageView cameraPreview;
@@ -32,12 +54,12 @@ public class QrCodeReaderActivity extends AppCompatActivity {
     @Bind(R.id.qrdecoderview)
     QRCodeReaderView qrCodeReaderView;
 
+
     Context mContext;
     String mQrResult = "";
     int CAMERA_PREVIEW = 0;
 
-    final int CAMERA_REQUEST = 1100;
-    CameraPhoto cameraPhoto;
+    ProgressDialog mProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,21 +69,27 @@ public class QrCodeReaderActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         mContext = this;
 
-        setUpQrScanner();
+        initialize();
+
+    }
+
+    private void initialize() {
+        mProgressDialog = BundyAndroidBase.defaultProgressDialog(mContext, "Signing in...");
+        resetScan();
 
     }
 
     private void setUpQrScanner() {
 
-        final TextView resultTextView = (TextView) findViewById(R.id.resultTextView);
         qrCodeReaderView = (QRCodeReaderView) findViewById(R.id.qrdecoderview);
         qrCodeReaderView.setOnQRCodeReadListener(new QRCodeReaderView.OnQRCodeReadListener() {
             @Override
             public void onQRCodeRead(String text, PointF[] points) {
                 mQrResult = text;
-                // resultTextView.setText(text);
                 qrCodeReaderView.stopCamera();
-                startCameraCapture();
+
+                startActivity(new Intent(mContext, CaptureImageActivity.class));
+                finish();
             }
         });
         qrCodeReaderView.setQRDecodingEnabled(true);
@@ -69,6 +97,16 @@ public class QrCodeReaderActivity extends AppCompatActivity {
         qrCodeReaderView.setTorchEnabled(true);
         qrCodeReaderView.setBackCamera();
 
+    }
+
+
+
+    private void resetScan() {
+        if (qrCodeReaderView != null) {
+            qrCodeReaderView.stopCamera();
+        }
+
+        setUpQrScanner();
     }
 
     @OnClick(R.id.cameraPreview)
@@ -91,37 +129,6 @@ public class QrCodeReaderActivity extends AppCompatActivity {
         }
     }
 
-    private void startCameraCapture() {
-        cameraPhoto = new CameraPhoto(getApplicationContext());
-        try {
-            startActivityForResult(cameraPhoto.takePhotoIntent(), CAMERA_REQUEST);
-        } catch (IOException e) {
-            UiUtil.showMessageDialog(getSupportFragmentManager(), e.getMessage());
-        }
-        cameraPhoto.addToGallery();
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (resultCode == RESULT_OK) {
-            if (requestCode == CAMERA_REQUEST) {
-
-                try {
-                    String photoPath = cameraPhoto.getPhotoPath();
-                    // Bitmap bitmap = PhotoLoader.init().from(photoPath).requestSize(512, 512).getBitmap();
-                    //    updateProfilePhoto(photoPath);
-                    // upload photo
-
-
-                } catch (Exception e) {
-                    UiUtil.showMessageDialog(getSupportFragmentManager(), "Please try again");
-                }
-            }
-        }
-    }
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -133,4 +140,6 @@ public class QrCodeReaderActivity extends AppCompatActivity {
         super.onPause();
         qrCodeReaderView.stopCamera();
     }
+
+
 }

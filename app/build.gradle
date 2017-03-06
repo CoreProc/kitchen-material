@@ -68,5 +68,8 @@ dependencies {
     compile 'com.ivankocijan:MagicViews:3.1.1@aar'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.dlazaro66.qrcodereaderview:qrcodereaderview:2.0.1'
+    compile 'com.daimajia.easing:library:2.0@aar'
+    compile 'com.daimajia.androidanimations:library:2.2@aar'
     compile files('libs/PhotoUtil.jar')
+    compile project(path: ':kitchen-android-module')
 }

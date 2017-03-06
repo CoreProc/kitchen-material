@@ -1,5 +1,7 @@
 package ph.coreproc.android.kitchenmaterial;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.media.ExifInterface;
@@ -67,6 +69,13 @@ public class BundyAndroidBase {
         matrix.postRotate(angle);
         return Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(),
                 matrix, true);
+    }
+
+    public static ProgressDialog defaultProgressDialog (Context context, String message) {
+        ProgressDialog progressDialog = new ProgressDialog(context);
+        progressDialog.setTitle(message);
+        progressDialog.setCancelable(false);
+        return progressDialog;
     }
 
 
