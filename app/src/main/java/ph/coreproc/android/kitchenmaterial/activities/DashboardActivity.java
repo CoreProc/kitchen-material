@@ -93,13 +93,7 @@ public class DashboardActivity extends AppCompatActivity {
     @OnClick({R.id.timeIn, R.id.timeOut})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.timeIn:
-                startActivity(new Intent(mContext, QrCodeReaderActivity.class));
-                break;
 
-            case R.id.timeOut:
-                startActivity(new Intent(mContext, QrCodeReaderActivity.class));
-                break;
         }
     }
 }
