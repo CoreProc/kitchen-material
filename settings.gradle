@@ -1,1 +1,1 @@
-include ':app', ':kitchen-android-module'
+include ':app'
