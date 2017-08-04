@@ -70,5 +70,5 @@ dependencies {
     compile 'com.dlazaro66.qrcodereaderview:qrcodereaderview:2.0.1'
     compile 'com.daimajia.easing:library:2.0@aar'
     compile 'com.daimajia.androidanimations:library:2.2@aar'
-    compile 'com.github.kaelitokael:kitchen-android-module:master-SNAPSHOT'
+    compile 'com.github.CoreProc:kitchen-android:-SNAPSHOT'
 }
